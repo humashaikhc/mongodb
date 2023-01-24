@@ -10,14 +10,14 @@ echo ---------Adding MongoDB APT repository to the /etc/apt/sources.list.d------
 echo "deb [ arch=amd64,arm64 ] https://repo.mongodb.org/apt/ubuntu focal/mongodb-org/6.0 multiverse" | sudo tee /etc/apt/sources.list.d/mongodb-org-6.0.list
 
 echo ---------Update------------
-sudo apt update
+sudo apt update -y
 
 echo ---------Install-----------
 sudo apt install -y mongodb-org
 
 echo ---------Check version----------
 mongod --version
-mongosh
+#mongosh
 
 echo ---------Updating the mongod.conf file--------
 sudo cp /home/vagrant/env/mongod.conf /etc/
