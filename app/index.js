@@ -28,6 +28,6 @@ app.get("*", (req, res) =>
   res.status(404).send("There is no content at this route.")
 );
 
-app.listen(port, () => console.log(`Server is listening on port ${port}, Environment = ${process.env.NODE_ENV}`));
+app.listen(port, () => console.log(`Server is listening on port ${port}, Database = ${database}`));
 
 export default app;
