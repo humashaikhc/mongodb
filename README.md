@@ -32,19 +32,23 @@ What did you need to do to provision a vm to:
 
 - Use the `nology.training` alias?
 
-  we installed the apache server and edited the apache.conf file to add the nology.training alias. Also added the hostmanager alias in vagrantfile. Had to install the hostmanager vagrant plugin.
+  we installed the apache server and edited the `apache.conf` file to add the nology.training alias. Also added the hostmanager alias in vagrantfile. Had to install the hostmanager vagrant plugin.
 
 - Use apache server to dirent traffic to a given port?
 
-    - Removing the 000-default.conf -> sudo a2dissite 000-default.conf
-    - Using the nology-proxy.conf instead -> sudo a2ensite nology-proxy.conf
-    - Finally reloading the server sudo systemctl reload apache2
+    - Removing the 000-default.conf -> `sudo a2dissite` 000-default.conf
+
+    - Using the nology-proxy.conf instead -> `sudo a2ensite` nology-proxy.conf
+
+    - Finally reloading the server `sudo systemctl` & `reload apache2`
 
 - How are you able to pass in the DB connection string?
 
   By adding the DB_Path to myvars.sh in the etc/profile.d folder.
 
->node.vm.provision "shell",inline: "echo 'export DB_PATH=192.168.56.20'>> /etc/profile.d/myvars.sh", run: "always"
+```
+node.vm.provision "shell",inline: "echo 'export DB_PATH=192.168.56.20'>> /etc/profile.d/myvars.sh", run: "always"
+```
 
 
 ---
